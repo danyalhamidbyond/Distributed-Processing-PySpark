@@ -56,4 +56,18 @@ for i, col in enumerate(df_d.columns):
 
 # COMMAND ----------
 
+#/dbfs/FileStore/shared_uploads/huseyin.cinar@b-yond.com/projects/model_export/VOLTE-VERIZON/add5890e0ee24ef5959ba87c4a8eac84
+
+# COMMAND ----------
+
+# MAGIC %sh
+# MAGIC /databricks/python3/bin/databricks configure
+
+# COMMAND ----------
+
+# MAGIC %sh
+# MAGIC databricks fs cp dbfs:/FileStore/shared_uploads/huseyin.cinar@b-yond.com/projects/model_export/VOLTE-VERIZON/add5890e0ee24ef5959ba87c4a8eac84/model.zip /Users/danyalhamid/Desktop/
+
+# COMMAND ----------
+
 

@@ -22,47 +22,9 @@ columns = first_df.columns
 
 # COMMAND ----------
 
-# import time
-# list_time = []
-
-
-# for i in range(8):
-#     num_files = i
-#     # Create an empty DataFrame to hold the combined data
-#     combined_df = pd.DataFrame(columns=columns)
-#     count = 0 
-#     start_time = time.time()
-
-#     # Loop through the list of files in the directory and read each TSV file into a DataFrame
-#     for file_name in os.listdir(dir_path):
-#         if file_name != '1.tsv' and count < num_files:
-#             file_path = os.path.join(dir_path, file_name)
-#             print(file_path)
-
-#             # Read the unzipped file as a CSV file
-#             df = pd.read_csv(os.path.join(dir_path, file_name), sep="\t", header=0, error_bad_lines=False)
-            
-#             # Append the data to the combined DataFrame
-#             combined_df = combined_df.append(df, ignore_index=True)
-#             count = count + 1
-
-#     # Show the combined DataFrame
-#     print(combined_df)
-#     #df = combined_df
-#     end_time = time.time()
-#     # calculate execution time in milliseconds
-#     execution_time_ms = (end_time - start_time) * 1000
-#     list_time.append(execution_time_ms)
-#     print("Execution time: ", execution_time_ms, "ms")
-# print(list_time)
-
-
-
-# COMMAND ----------
-
 import time
 list_time = []
-num_files = 5
+num_files = 1
 
 # COMMAND ----------
 
@@ -284,40 +246,8 @@ df.to_csv('/dbfs/FileStore/shared_uploads/danyal.hamid@b-yond.com/learning_outpu
 
 # COMMAND ----------
 
-# import csv
-# import os
-
-# # Define the header of the CSV file
-# header = ['load data', 'value counts', 'word count','date transform', 'drop na', 'one hor encoding', 'train test split','model training','num files','number of rows']
-
-# # Define the data for a new row to append to the CSV file
-# new_row = list_time
-
-# # Check if the CSV file already exists
-
-# if os.path.isfile('/dbfs/FileStore/shared_uploads/danyal.hamid@b-yond.com/learning_output/time_central.csv'):
-#   # Append the new row to the existing CSV file
-#   with open('/dbfs/FileStore/shared_uploads/danyal.hamid@b-yond.com/learning_output/time_central.csv', mode='a') as file:
-#     writer = csv.writer(file)
-#     writer.writerow(new_row)
-# else:
-#   # Create a new CSV file with the header and the new row
-#   with open('/dbfs/FileStore/shared_uploads/danyal.hamid@b-yond.com/learning_output/time_central.csv', mode='w') as file:
-#     writer = csv.writer(file)
-#     writer.writerow(header)
-#     writer.writerow(new_row)
-
-
-# COMMAND ----------
-
 import pandas as pd
-
-# COMMAND ----------
-
 df_time = pd.read_csv('/dbfs/FileStore/shared_uploads/danyal.hamid@b-yond.com/learning_output/time_central.csv')
-
-# COMMAND ----------
-
 df_time
 
 # COMMAND ----------
